@@ -31,7 +31,7 @@ set.seed(538734517)
 
 ```{r, file_parsing, warning=FALSE, tidy=TRUE}
 # file parsing and cleaning
-d <- read.delim("/Users/paulcao/Downloads/GSE184156_RNAseq_ECM_rnaseq_featurecounts.txt", header=TRUE, sep="\t", skip=1)
+d <- read.delim("/home/rstudio/iwong_poweranalysis/metadata/GSE184156_RNAseq_ECM_rnaseq_featurecounts.txt", header=TRUE, sep="\t", skip=1)
 dataMat <- d[, c(10, 11, 12, 16, 17, 18)]
 rownames(dataMat) <- d$Geneid
 colnames(dataMat) <- c("LIVER1", "LIVER2", "LIVER3", "NO13", "NO14", "NO15")
@@ -51,7 +51,7 @@ head(dataMat)
 
 ## Parsing Gene IDs
 ```{r}
-genelist <- read.delim("/Users/paulcao/cadherin_and_integrin.txt", header=TRUE, sep="\t")
+genelist <- read.delim("/home/rstudio/iwong_poweranalysis/metadata/cadherin_and_integrin.txt", header=TRUE, sep="\t")
 genelist <- genelist[, c(2, 3)]
 colnames(genelist) <- c("Gene.name", "Gene.stable.ID")
 head(genelist)
